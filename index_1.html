@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <!-- ============================================================
+       NASSER SAMEH — PORTFOLIO
+       Static site: HTML + CSS + Vanilla JS (no build step, no backend)
+
+       Project structure:
+         index.html                  → semantic markup (skeleton only)
+         assets/css/style.css        → all styles
+         assets/js/main.js           → data + rendering + behaviour
+         assets/images/clients/      → client profile photos
+  ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ناصر سامح — سكريبت رايتر واستراتيجي تسويقي | Everything starts with a word</title>
+  <meta name="description" content="ناصر سامح — سكريبت رايتر ومخطط واستراتيجي تسويقي. +4 سنين خبرة، +1000 قطعة محتوى، +30 خطة واستراتيجية، +2500 عميل، 50 مليون مشاهدة.">
+  <meta name="theme-color" content="#050505">
+  <meta property="og:title" content="ناصر سامح — Everything starts with a word.">
+  <meta property="og:description" content="سكريبت رايتر ومخطط واستراتيجي تسويقي. الكلمة الصح وراها شغل كتير.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon: red "N" mark on black -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23050505'/><text x='50' y='72' font-size='58' font-weight='900' text-anchor='middle' fill='%23e8333f' font-family='Arial Black, Arial'>N</text></svg>">
+
+  <!-- Fonts (preconnect + swap for performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nasser Sameh",
+    "alternateName": "ناصر سامح",
+    "jobTitle": "Script Writer & Marketing Strategist",
+    "sameAs": [
+      "https://www.instagram.com/cnasser_sameh/",
+      "https://www.tiktok.com/@cnasser_sameh",
+      "https://youtube.com/@cnasser_sameh"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">تخطَّ إلى المحتوى</a>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__brand" aria-label="Nasser Sameh — home">
+        <strong data-i18n="brandName">ناصر سامح</strong>
+        <span class="en">WORDS <b>/</b> STRATEGY <b>/</b> STORY</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Main navigation">
+        <a href="#about"    data-i18n="navAbout">عنّي</a>
+        <a href="#services" data-i18n="navServices">الخدمات</a>
+        <a href="#clients"  data-i18n="navClients">العملاء</a>
+        <a href="#projects" data-i18n="navProjects">المشاريع</a>
+        <a href="#faq"      data-i18n="navFaq">الأسئلة</a>
+      </nav>
+
+      <div class="nav__tools">
+        <button class="lang-btn is-on" id="btnAr" aria-pressed="true">AR</button>
+        <button class="lang-btn" id="btnEn" aria-pressed="false">EN</button>
+        <a href="https://tally.so/r/kdd7br" target="_blank" rel="noopener"
+           class="btn btn--primary nav__cta-desktop" data-i18n="ctaBook">احجز الأوفر المناسب</a>
+        <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero">
+      <div class="container hero__grid">
+        <div class="reveal">
+          <p class="hero__eyebrow" data-i18n="heroEyebrow">كاتب سكريبت / استراتيجي تسويقي</p>
+          <p class="hero__tag en">Everything starts with a word.</p>
+          <h1>
+            <span class="hero__name"  data-i18n="heroName">ناصر سامح</span>
+            <span class="hero__big"   data-i18n="heroBig">الكلمة بتفرق.</span>
+            <span class="hero__ghost" data-i18n="heroGhost">في كل حاجة.</span>
+          </h1>
+          <p class="hero__sub" data-i18n="heroSub">سكريبت رايتر ومخطط واستراتيجي تسويقي</p>
+          <div class="hero__ctas">
+            <a href="https://tally.so/r/kdd7br" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="ctaBook">احجز الأوفر المناسب</a>
+            <a href="#projects" class="btn btn--ghost" data-i18n="ctaProjects">شوف المشاريع</a>
+          </div>
+          <div class="hero__socials" id="heroSocials"></div>
+        </div>
+
+        <div class="hero__photo-wrap reveal">
+          <div class="hero__orbit" aria-hidden="true"></div>
+          <figure class="hero__photo">
+            <div class="hero__photo-fallback" id="photoFallback">
+              <b>NS</b><span>NASSER SAMEH</span>
+            </div>
+            <img id="nasserPhoto"
+                 src="https://yt3.googleusercontent.com/WErVM1VCNaPC2HxaNbBJcgWfU31c5LPaDYgbo5mdnAFXdSiXa34QtdH19GKnfgFpO1EwwK8z-Q=s900-c-k-c0x00ffffff-no-rj"
+                 alt="ناصر سامح — سكريبت رايتر واستراتيجي تسويقي"
+                 width="400" height="500" loading="eager" decoding="async" referrerpolicy="no-referrer"
+                 onload="document.getElementById('photoFallback').style.display='none'">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <div class="stats" role="group" aria-label="Key stats">
+      <div class="container stats__grid" id="statsGrid"></div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__quote reveal">
+            <span class="qmark" aria-hidden="true">“</span>
+            <p class="sec-head__eyebrow" data-i18n="aboutEyebrow">الشخص وراء الكلمات</p>
+          </div>
+          <div class="about__body reveal">
+            <div id="aboutBio"></div>
+            <ul class="about__why" id="aboutWhy"></ul>
+            <h3 class="chips__title" data-i18n="skillsTitle">٨ مهارات في كل قطعة محتوى</h3>
+            <div class="chips" id="skillChips"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section id="services">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div>
+            <p class="sec-head__eyebrow" data-i18n="svcEyebrow">الخدمات</p>
+            <h2 data-i18n="svcTitle">الكلمة الصح وراها شغل كتير.</h2>
+          </div>
+          <p data-i18n="svcSub">من الاستراتيجية لحد آخر تفصيلة في التصوير والنشر — كل خدمة ليها دور واضح.</p>
+        </div>
+        <div class="cards" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section id="process">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div>
+            <p class="sec-head__eyebrow" data-i18n="prcEyebrow">طريقة الشغل</p>
+            <h2 data-i18n="prcTitle">خطوات واضحة. مساحة للإبداع.</h2>
+          </div>
+          <p data-i18n="prcSub">نظام يخلي كل مرحلة مفهومة، وكل طلب له مكانه.</p>
+        </div>
+        <div class="cards cards--3" id="processGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= CLIENTS ================= -->
+    <section id="clients">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div>
+            <p class="sec-head__eyebrow" data-i18n="clEyebrow">العملاء</p>
+            <h2 data-i18n="clTitle">علاقات بدأت بكلمة.</h2>
+          </div>
+          <p data-i18n="clSub">مجموعة من صنّاع المحتوى وأصحاب الأعمال من مجالات ومنصات مختلفة. الأرقام التقريبية غير مُتحقق منها.</p>
+        </div>
+        <div class="clients__grid" id="clientsGrid"></div>
+        <p class="clients__note" data-i18n="clNote">* الأرقام مأخوذة من لقطات شاشة وقت التعاون — تقريبية وقابلة للتحديث.</p>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div>
+            <p class="sec-head__eyebrow" data-i18n="prjEyebrow">حالات مختارة</p>
+            <h2 data-i18n="prjTitle">المشروع هو أكتر من رقم.</h2>
+          </div>
+          <p data-i18n="prjSub">التفاصيل المتاحة فقط — من غير نتائج مفترضة أو قصص ناقصة متخفية.</p>
+        </div>
+        <div class="filter" id="filterBar" role="tablist" aria-label="Project filters"></div>
+        <div class="projects__grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= INDUSTRIES ================= -->
+    <section id="industries">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div>
+            <p class="sec-head__eyebrow" data-i18n="indEyebrow">المحتوى / المجال</p>
+            <h2 data-i18n="indTitle">كل مجال له حكاية.</h2>
+          </div>
+          <p data-i18n="indSub">أنواع محتوى ومجالات متنوعة — الفكرة دايماً هي فهم الجمهور والرسالة.</p>
+        </div>
+        <div class="panels">
+          <div class="panel reveal">
+            <h3 data-i18n="indTypes">أنواع المحتوى</h3>
+            <div class="chips" id="contentTypesChips"></div>
+          </div>
+          <div class="panel reveal">
+            <h3 data-i18n="indFields">المجالات</h3>
+            <div class="chips" id="industriesChips"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS (auto-hidden when empty) ================= -->
+    <section id="testimonials" hidden>
+      <div class="container">
+        <div class="sec-head reveal">
+          <div>
+            <p class="sec-head__eyebrow" data-i18n="tstEyebrow">آراء العملاء</p>
+            <h2 data-i18n="tstTitle">كلامهم عن الشغل.</h2>
+          </div>
+          <p data-i18n="tstSub">قريباً — ملاحظات حقيقية من العملاء هتظهر هنا.</p>
+        </div>
+        <div class="tst__grid" id="tstGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq">
+      <div class="container">
+        <div class="sec-head reveal">
+          <div>
+            <p class="sec-head__eyebrow" data-i18n="faqEyebrow">قبل ما نبدأ</p>
+            <h2 data-i18n="faqTitle">أسئلة مهمة.</h2>
+          </div>
+          <p data-i18n="faqSub">إجابات مباشرة عشان نبدأ على أساس واضح.</p>
+        </div>
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="cta-final" id="contact">
+      <div class="container reveal">
+        <h2 data-i18n="finalTitle">أنا وفريقي جاهزين نشتغل مع بعض حسب احتياجاتك ونحقق هدفك في وقت قياسي. نحدد معاد للاجتماع وتسأل كل الأسئلة اللي تحبها.</h2>
+        <p class="cta-final__sub" data-i18n="finalSub">خلال 24 ساعة من التسجيل في الفورم بتواصل معاك بالأوفر المناسب ليك.</p>
+        <a href="https://tally.so/r/kdd7br" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="ctaBook">احجز الأوفر المناسب</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container footer__inner">
+      <div>
+        <strong style="font-weight:900">ناصر سامح — Nasser Sameh</strong><br>
+        <span class="en" style="font-size:.6rem;color:var(--text-faint);letter-spacing:.25em">EVERYTHING STARTS WITH A WORD.</span>
+      </div>
+      <div class="footer__socials" id="footerSocials"></div>
+      <p class="footer__copy">© <span id="year"></span> Nasser Sameh. <span data-i18n="rights">كل الحقوق محفوظة.</span></p>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING CTA (mobile) ================= -->
+  <a href="https://tally.so/r/kdd7br" target="_blank" rel="noopener"
+     class="btn btn--primary float-cta" data-i18n="ctaBookShort">احجز دلوقتي</a>
+
+  <!-- ================= CASE STUDY MODAL ================= -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-close aria-label="إغلاق">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Scripts (at the end of <body> so the DOM exists when it runs) -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
